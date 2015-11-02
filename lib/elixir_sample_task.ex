@@ -1,4 +1,8 @@
-defmodule KV do
+defmodule ElixirSample.Task do
+  def h do
+    IO.puts "hi"
+  end
+  
   def start_link do
     Task.start_link(fn -> loop(%{}) end)
   end
@@ -14,6 +18,6 @@ defmodule KV do
   end
 end
 
-{:ok, pid} = KV.start_link
-send pid, {:put, :hello, :world}
-send pid, {:get, :hello, self()}
+# {:ok, pid} = ElixirSample.Task.start_link
+# send pid, {:put, :hello, :world}
+# send pid, {:get, :hello, self()}
